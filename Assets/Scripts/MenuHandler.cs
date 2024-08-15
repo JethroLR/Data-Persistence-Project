@@ -7,25 +7,15 @@ using UnityEditor;
 #endif
 
 
+[DefaultExecutionOrder(1000)]
 public class MenuHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void StartGame() {
         SceneManager.LoadScene(1);
     }
 
-    public void TextChanged(string text) {
-        Debug.Log("MenuHandler - TextChanged: " + text);
+    public void TextChanged(string inputText) {
+        Debug.Log($"MenuHandler - TextChanged {inputText}");
+        GameManger.Instance.PlayerName = inputText;
     }
  }
